@@ -5,10 +5,12 @@ import javafx.scene.control.Label;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.paint.Color;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.FontPosture;
 
 public class Controller{
-    @FXML
-    private Label label;
     @FXML
     private StackPane root;
 
@@ -29,6 +31,21 @@ public class Controller{
         modifyRect(checkbox, "#D0D0D0", 2.0, 5, 5);
         checkbox.setTranslateX(-120);
         root.getChildren().add(checkbox);
+
+        //I'm not a robot text
+        Text text = new Text("I'm not a robot");
+        text.setFont(Font.font("Arial", FontWeight.NORMAL, FontPosture.REGULAR, 25));
+        text.setTranslateX(30);
+        root.getChildren().add(text);
+
+        checkbox.setOnMouseEntered(e -> {
+            checkbox.setStroke(Color.GREY);
+            checkbox.setStrokeWidth(3.0);
+        });
+        checkbox.setOnMouseExited(e -> {
+            checkbox.setStroke(Color.web("#D0D0D0"));
+            checkbox.setStrokeWidth(2.0);
+        });
     }
 
     public void modifyRect(
