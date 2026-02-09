@@ -46,6 +46,45 @@ public class Controller{
             checkbox.setStroke(Color.web("#D0D0D0"));
             checkbox.setStrokeWidth(2.0);
         });
+        checkbox.setOnMouseClicked(e -> {
+            rect.setVisible(false);
+            checkbox.setVisible(false);
+            text.setVisible(false);
+            robotSpotted();
+        });
+    }
+
+    public void robotSpotted(){
+        Text text = new Text("haha u robot");
+        text.setTranslateY(-30.0);
+        root.getChildren().add(text);
+        Text text2 = new Text("go away clanker");
+        text2.setTranslateY(-10.0);
+        root.getChildren().add(text2);
+        Rectangle retry = new Rectangle(100, 30, Color.web("#EEEEEE"));
+        modifyRect(retry, "#D0D0D0", 2.0, 20, 20);
+        retry.setTranslateY(20.0);
+        root.getChildren().add(retry);
+        Text retryText = new Text("Retry");
+        retryText.setTranslateY(20);
+        root.getChildren().add(retryText);
+
+        retry.setOnMouseEntered(e -> {
+            retry.setStroke(Color.GREY);
+            retry.setStrokeWidth(3.0);
+        });
+
+        retry.setOnMouseExited(e -> {
+            retry.setStroke(Color.web("#D0D0D0"));
+            retry.setStrokeWidth(2.0);
+        });
+
+        retry.setOnMouseClicked(e -> {
+            text.setVisible(false);
+            text2.setVisible(false);
+            retry.setVisible(false);
+            levelOne();
+        });
     }
 
     public void modifyRect(
