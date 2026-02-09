@@ -54,6 +54,10 @@ public class Controller{
         });
     }
 
+    public void levelTwo(){
+        
+    }
+
     public void robotSpotted(){
         Text text = new Text("haha u robot");
         text.setTranslateY(-30.0);
