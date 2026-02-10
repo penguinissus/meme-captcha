@@ -59,9 +59,91 @@ public class Controller{
     public void levelTwo(){
         Image sh2 = new Image("file:images/levelTwo/squareHole2.png");
         ImageView sh2V = new ImageView(sh2);
-        sh2V.setFitWidth(50);
+        sh2V.setFitWidth(40);
         sh2V.setPreserveRatio(true);
         root.getChildren().add(sh2V);
+
+        Image sh1 = new Image("file:images/levelTwo/squareHole1.png");
+        ImageView sh1V = new ImageView(sh1);
+        sh1V.setFitWidth(40);
+        sh1V.setPreserveRatio(true);
+        root.getChildren().add(sh1V);
+
+        Image ah2 = new Image("file:images/levelTwo/arcHole2.png");
+        ImageView ah2V = new ImageView(ah2);
+        ah2V.setFitWidth(40);
+        ah2V.setPreserveRatio(true);
+        root.getChildren().add(ah2V);
+
+        Image ah1 = new Image("file:images/levelTwo/arcHole1.png");
+        ImageView ah1V = new ImageView(ah1);
+        ah1V.setFitWidth(40);
+        ah1V.setPreserveRatio(true);
+        root.getChildren().add(ah1V);
+
+        Image ch2 = new Image("file:images/levelTwo/circleHole2.png");
+        ImageView ch2V = new ImageView(ch2);
+        ch2V.setFitWidth(40);
+        ch2V.setPreserveRatio(true);
+        root.getChildren().add(ch2V);
+
+        Image ch1 = new Image("file:images/levelTwo/circleHole1.png");
+        ImageView ch1V = new ImageView(ch1);
+        ch1V.setFitWidth(40);
+        ch1V.setPreserveRatio(true);
+        root.getChildren().add(ch1V);
+
+        Image rh2 = new Image("file:images/levelTwo/rectangleHole2.png");
+        ImageView rh2V = new ImageView(rh2);
+        rh2V.setFitWidth(40);
+        rh2V.setPreserveRatio(true);
+        root.getChildren().add(rh2V);
+
+        Image rh1 = new Image("file:images/levelTwo/rectangleHole1.png");
+        ImageView rh1V = new ImageView(rh1);
+        rh1V.setFitWidth(40);
+        rh1V.setPreserveRatio(true);
+        root.getChildren().add(rh1V);
+
+        Image th2 = new Image("file:images/levelTwo/triangleHole2.png");
+        ImageView th2V = new ImageView(th2);
+        th2V.setFitWidth(40);
+        th2V.setPreserveRatio(true);
+        root.getChildren().add(th2V);
+
+        Image th1 = new Image("file:images/levelTwo/triangleHole1.png");
+        ImageView th1V = new ImageView(th1);
+        th1V.setFitWidth(40);
+        th1V.setPreserveRatio(true);
+        root.getChildren().add(th1V);
+
+        ah1V.setTranslateX(-200);
+        ah2V.setTranslateX(-200);
+        ch1V.setTranslateX(-100);
+        ch2V.setTranslateX(-100);
+        rh1V.setTranslateX(100);
+        rh2V.setTranslateX(100);
+        th1V.setTranslateX(200);
+        th2V.setTranslateX(200);
+
+        Rectangle next = new Rectangle(100, 30, Color.web("#EEEEEE"));
+        modifyRect(next, "#D0D0D0", 2.0, 20, 20);
+        next.setTranslateY(-300.0);
+        next.setTranslateX(-300.0);
+        root.getChildren().add(next);
+        next.setOnMouseClicked(e -> {
+            sh2V.setVisible(false);
+            sh1V.setVisible(false);
+            ah1V.setVisible(false);
+            ah2V.setVisible(false);
+            ch1V.setVisible(false);
+            ch2V.setVisible(false);
+            rh1V.setVisible(false);
+            rh2V.setVisible(false);
+            th1V.setVisible(false);
+            th2V.setVisible(false);
+            robotSpotted();
+        });
     }
 
     public void robotSpotted(){
@@ -103,6 +185,7 @@ public class Controller{
             text.setVisible(false);
             text2.setVisible(false);
             retry.setVisible(false);
+            retryText.setVisible(false);
             levelOne();
         });
     }
