@@ -63,6 +63,12 @@ public class Controller{
         sh2V.setPreserveRatio(true);
         root.getChildren().add(sh2V);
 
+        Image s = new Image("file:images/levelTwo/square.png");
+        ImageView square = new ImageView(s);
+        square.setFitWidth(40);
+        square.setPreserveRatio(true);
+        root.getChildren().add(square);
+
         Image sh1 = new Image("file:images/levelTwo/squareHole1.png");
         ImageView sh1V = new ImageView(sh1);
         sh1V.setFitWidth(40);
@@ -74,6 +80,12 @@ public class Controller{
         ah2V.setFitWidth(40);
         ah2V.setPreserveRatio(true);
         root.getChildren().add(ah2V);
+
+        Image a = new Image("file:images/levelTwo/arc.png");
+        ImageView arc = new ImageView(a);
+        arc.setFitWidth(40);
+        arc.setPreserveRatio(true);
+        root.getChildren().add(arc);
 
         Image ah1 = new Image("file:images/levelTwo/arcHole1.png");
         ImageView ah1V = new ImageView(ah1);
@@ -87,6 +99,12 @@ public class Controller{
         ch2V.setPreserveRatio(true);
         root.getChildren().add(ch2V);
 
+        Image c = new Image("file:images/levelTwo/circle.png");
+        ImageView circle = new ImageView(c);
+        circle.setFitWidth(40);
+        circle.setPreserveRatio(true);
+        root.getChildren().add(circle);
+
         Image ch1 = new Image("file:images/levelTwo/circleHole1.png");
         ImageView ch1V = new ImageView(ch1);
         ch1V.setFitWidth(40);
@@ -98,6 +116,12 @@ public class Controller{
         rh2V.setFitWidth(40);
         rh2V.setPreserveRatio(true);
         root.getChildren().add(rh2V);
+        
+        Image r = new Image("file:images/levelTwo/rectangle.png");
+        ImageView rectangle = new ImageView(r);
+        rectangle.setFitWidth(40);
+        rectangle.setPreserveRatio(true);
+        root.getChildren().add(rectangle);
 
         Image rh1 = new Image("file:images/levelTwo/rectangleHole1.png");
         ImageView rh1V = new ImageView(rh1);
@@ -111,11 +135,28 @@ public class Controller{
         th2V.setPreserveRatio(true);
         root.getChildren().add(th2V);
 
+        Image t = new Image("file:images/levelTwo/triangle.png");
+        ImageView triangle = new ImageView(t);
+        triangle.setFitWidth(40);
+        triangle.setPreserveRatio(true);
+        root.getChildren().add(triangle);
+
         Image th1 = new Image("file:images/levelTwo/triangleHole1.png");
         ImageView th1V = new ImageView(th1);
         th1V.setFitWidth(40);
         th1V.setPreserveRatio(true);
         root.getChildren().add(th1V);
+
+        arc.setTranslateY(-100);
+        circle.setTranslateY(-100);
+        rectangle.setTranslateY(-100);
+        square.setTranslateY(-100);
+        triangle.setTranslateY(-100);
+        arc.setTranslateX(-200);
+        circle.setTranslateX(-100);
+        rectangle.setTranslateX(0);
+        square.setTranslateX(100);
+        triangle.setTranslateX(200);
 
         ah1V.setTranslateX(-200);
         ah2V.setTranslateX(-200);
