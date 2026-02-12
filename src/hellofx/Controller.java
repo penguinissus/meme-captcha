@@ -167,6 +167,13 @@ public class Controller{
         th1V.setTranslateX(200);
         th2V.setTranslateX(200);
 
+        DraggableMaker draggableMaker = new DraggableMaker();
+        draggableMaker.makeDraggable(arc);
+        draggableMaker.makeDraggable(circle);
+        draggableMaker.makeDraggable(rectangle);
+        draggableMaker.makeDraggable(square);
+        draggableMaker.makeDraggable(triangle);
+
         Rectangle next = new Rectangle(100, 30, Color.web("#EEEEEE"));
         modifyRect(next, "#D0D0D0", 2.0, 20, 20);
         next.setTranslateY(-300.0);
