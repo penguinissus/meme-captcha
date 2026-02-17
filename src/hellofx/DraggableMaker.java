@@ -1,20 +1,11 @@
 package hellofx;
 
-// import javafx.fxml.FXML;
 import javafx.scene.image.*;
-// import javafx.scene.text.*;
-// import javafx.scene.layout.*;
 
 public class DraggableMaker {
     private double mouseX, mouseY;
 
-    // @FXML
-    // private StackPane root;
-
     public void makeDraggable(ImageView node){
-        // Text text = new Text(mouseX + ", " + mouseY);
-        // root.getChildren().add(text);
-        // text.setTranslateY(-250);
 
         node.setOnMousePressed(mouseEvent -> {
             mouseX = mouseEvent.getSceneX();
@@ -24,13 +15,26 @@ public class DraggableMaker {
         node.setOnMouseDragged(mouseEvent -> {
             double deltaX = mouseEvent.getSceneX() - mouseX;
             double deltaY = mouseEvent.getSceneY() - mouseY;
-            node.setTranslateX(node.getTranslateX() + deltaX);
-            node.setTranslateY(node.getTranslateY() + deltaY);
+            if (node.getTranslateX() < 200 && node.getTranslateX() > -200){
+                node.setTranslateX(node.getTranslateX() + deltaX);
+            } else if (node.getTranslateX() >= 200){
+                node.setTranslateX(199.9);
+            } else {
+                node.setTranslateX(-199.9);
+            }
+            if (node.getTranslateY() > -200 && node.getTranslateY() < 0){
+                node.setTranslateY(node.getTranslateY() + deltaY);
+            } else if (node.getTranslateY() <= -200){
+                node.setTranslateY(-199.9);
+            } else {
+                node.setTranslateY(-30.1);
+            }
             mouseX = mouseEvent.getSceneX();
             mouseY = mouseEvent.getSceneY();
         });
 
-        node.setOnMouseDragReleased(mouseEvent -> {
+        node.setOnMouseReleased(mouseEvent -> {
+            node.setVisible(false);
         });
     }
 }
