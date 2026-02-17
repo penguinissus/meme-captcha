@@ -247,19 +247,19 @@ public class Controller{
         thg2V.setTranslateX(200);
 
         DraggableMaker draggableMaker = new DraggableMaker();
-        draggableMaker.makeDraggable(arc, 
+        draggableMaker.makeDraggable(arc, 1, 
             ah1V, ch1V, rh1V, sh1V, th1V, ah2V, ch2V, rh2V, sh2V, th2V,
             ahg1V, chg1V, rhg1V, shg1V, thg1V, ahg2V, chg2V, rhg2V, shg2V, thg2V);
-        draggableMaker.makeDraggable(circle, 
+        draggableMaker.makeDraggable(circle, 2,
             ah1V, ch1V, rh1V, sh1V, th1V, ah2V, ch2V, rh2V, sh2V, th2V,
             ahg1V, chg1V, rhg1V, shg1V, thg1V, ahg2V, chg2V, rhg2V, shg2V, thg2V);
-        draggableMaker.makeDraggable(rectangle, 
+        draggableMaker.makeDraggable(rectangle, 3,
             ah1V, ch1V, rh1V, sh1V, th1V, ah2V, ch2V, rh2V, sh2V, th2V,
             ahg1V, chg1V, rhg1V, shg1V, thg1V, ahg2V, chg2V, rhg2V, shg2V, thg2V);
-        draggableMaker.makeDraggable(square, 
+        draggableMaker.makeDraggable(square, 4,
             ah1V, ch1V, rh1V, sh1V, th1V, ah2V, ch2V, rh2V, sh2V, th2V,
             ahg1V, chg1V, rhg1V, shg1V, thg1V, ahg2V, chg2V, rhg2V, shg2V, thg2V);
-        draggableMaker.makeDraggable(triangle, 
+        draggableMaker.makeDraggable(triangle, 5,
             ah1V, ch1V, rh1V, sh1V, th1V, ah2V, ch2V, rh2V, sh2V, th2V,
             ahg1V, chg1V, rhg1V, shg1V, thg1V, ahg2V, chg2V, rhg2V, shg2V, thg2V);
 

@@ -4,8 +4,16 @@ import javafx.scene.image.*;
 
 public class DraggableMaker {
     private double mouseX, mouseY;
+    boolean[][] positions = {
+        {false, false, false, false, false},
+        {false, false, false, false, false},
+        {false, false, false, false, false},
+        {false, false, false, false, false},
+        {false, false, false, false, false}
+    };
+    int count = 0;
 
-    public void makeDraggable(ImageView node, 
+    public void makeDraggable(ImageView node, int n,
         ImageView a1, ImageView c1, ImageView r1, ImageView s1, ImageView t1,
         ImageView a2, ImageView c2, ImageView r2, ImageView s2, ImageView t2,
         ImageView a1g, ImageView c1g, ImageView r1g, ImageView s1g, ImageView t1g,
@@ -165,7 +173,81 @@ public class DraggableMaker {
         });
 
         node.setOnMouseReleased(mouseEvent -> {
-            node.setVisible(false);
+            if (node.getTranslateX() > -220 && node.getTranslateX() < -180){
+                if (n==1){
+                    positions[0][0] = true;
+                } else if (n==2){
+                    positions[0][1] = true;
+                } else if (n==3){
+                    positions[0][2] = true;
+                } else if (n==4){
+                    positions[0][3] = true;
+                } else if (n==5){
+                    positions[0][4] = true;
+                }
+                node.setVisible(false);
+                count++;
+            } else if (node.getTranslateX() > -120 && node.getTranslateX() < -80){
+                if (n==1){
+                    positions[1][0] = true;
+
+                } else if (n==2){
+                    positions[1][1] = true;
+                } else if (n==3){
+                    positions[1][2] = true;
+                } else if (n==4){
+                    positions[1][3] = true;
+                } else if (n==5){
+                    positions[1][4] = true;
+                }
+                node.setVisible(false);
+                count++;
+            } else if (node.getTranslateX() > -20 && node.getTranslateX() < 20){
+                if (n==1){
+                    positions[2][0] = true;
+                } else if (n==2){
+                    positions[2][1] = true;
+                } else if (n==3){
+                    positions[2][2] = true;
+                } else if (n==4){
+                    positions[2][3] = true;
+                } else if (n==5){
+                    positions[2][4] = true;
+                }
+                node.setVisible(false);
+                count++;
+            } else if (node.getTranslateX() > 80 && node.getTranslateX() < 120){
+                if (n==1){
+                    positions[3][0] = true;
+                } else if (n==2){
+                    positions[3][1] = true;
+                } else if (n==3){
+                    positions[3][2] = true;
+                } else if (n==4){
+                    positions[3][3] = true;
+                } else if (n==5){
+                    positions[3][4] = true;
+                }
+                node.setVisible(false);
+                count++;
+            } else if (node.getTranslateX() > 180 && node.getTranslateX() < 220){
+                if (n==1){
+                    positions[4][0] = true;
+                } else if (n==2){
+                    positions[4][1] = true;
+                } else if (n==3){
+                    positions[4][2] = true;
+                } else if (n==4){
+                    positions[4][3] = true;
+                } else if (n==5){
+                    positions[4][4] = true;
+                }
+                node.setVisible(false);
+                count++;
+            }
+            if (count >= 5){
+                
+            }
         });
     }
 }
