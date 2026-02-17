@@ -1,20 +1,20 @@
 package hellofx;
 
-import javafx.fxml.FXML;
+// import javafx.fxml.FXML;
 import javafx.scene.image.*;
-import javafx.scene.text.*;
-import javafx.scene.layout.*;
+// import javafx.scene.text.*;
+// import javafx.scene.layout.*;
 
 public class DraggableMaker {
     private double mouseX, mouseY;
 
-    @FXML
-    private StackPane root;
+    // @FXML
+    // private StackPane root;
 
     public void makeDraggable(ImageView node){
-        Text text = new Text(mouseX + ", " + mouseY);
-        root.getChildren().add(text);
-        text.setTranslateY(-250);
+        // Text text = new Text(mouseX + ", " + mouseY);
+        // root.getChildren().add(text);
+        // text.setTranslateY(-250);
 
         node.setOnMousePressed(mouseEvent -> {
             mouseX = mouseEvent.getSceneX();
