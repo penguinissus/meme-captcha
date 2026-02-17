@@ -1,13 +1,18 @@
 package hellofx;
 
+<<<<<<< HEAD
 import javafx.fxml.FXML;
 import javafx.scene.image.*;
 import javafx.scene.text.*;
 import javafx.scene.layout.*;
+=======
+import javafx.scene.Node;
+>>>>>>> parent of e3f1504 (limit draggable area)
 
 public class DraggableMaker {
     private double mouseX, mouseY;
 
+<<<<<<< HEAD
     @FXML
     private StackPane root;
 
@@ -16,6 +21,9 @@ public class DraggableMaker {
         root.getChildren().add(text);
         text.setTranslateY(-250);
 
+=======
+    public void makeDraggable(Node node){
+>>>>>>> parent of e3f1504 (limit draggable area)
         node.setOnMousePressed(mouseEvent -> {
             mouseX = mouseEvent.getSceneX();
             mouseY = mouseEvent.getSceneY();
@@ -24,20 +32,8 @@ public class DraggableMaker {
         node.setOnMouseDragged(mouseEvent -> {
             double deltaX = mouseEvent.getSceneX() - mouseX;
             double deltaY = mouseEvent.getSceneY() - mouseY;
-            if(node.getTranslateX() > -250 && node.getTranslateX() < 250){
-                node.setTranslateX(node.getTranslateX() + deltaX);
-            } else if (node.getTranslateX() <= -250){
-                node.setTranslateX(-249);
-            } else {
-                node.setTranslateX(249);
-            }
-            if(node.getTranslateY() > -250 && node.getTranslateY() < -50){
-                node.setTranslateY(node.getTranslateY() + deltaY);
-            } else if (node.getTranslateY() <= -250){
-                node.setTranslateY(-249);
-            } else {
-                node.setTranslateY(-51);
-            }
+            node.setTranslateX(node.getTranslateX() + deltaX);
+            node.setTranslateY(node.getTranslateY() + deltaY);
             mouseX = mouseEvent.getSceneX();
             mouseY = mouseEvent.getSceneY();
         });
