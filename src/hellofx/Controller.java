@@ -57,11 +57,24 @@ public class Controller{
     }
 
     public void levelTwo(){
+        double mouseX = 0;
+        double mouseY = 0;
+        Text instruction = new Text(mouseX + ", " + mouseY);
+        instruction.setTranslateY(-250);
+        root.getChildren().add(instruction);
+
         Image ah1 = new Image("file:images/levelTwo/arcHole1.png");
         ImageView ah1V = new ImageView(ah1);
         ah1V.setFitWidth(40);
         ah1V.setPreserveRatio(true);
         root.getChildren().add(ah1V);
+
+        Image ah1g = new Image("file:images/levelTwo/arcHole1g.png");
+        ImageView ah1gV = new ImageView(ah1g);
+        ah1gV.setFitWidth(40);
+        ah1gV.setPreserveRatio(true);
+        root.getChildren().add(ah1gV);
+        ah1gV.setVisible(false);
 
         Image ch1 = new Image("file:images/levelTwo/circleHole1.png");
         ImageView ch1V = new ImageView(ch1);
@@ -69,11 +82,25 @@ public class Controller{
         ch1V.setPreserveRatio(true);
         root.getChildren().add(ch1V);
 
+        Image ch1g = new Image("file:images/levelTwo/circleHole1g.png");
+        ImageView ch1gV = new ImageView(ch1g);
+        ch1gV.setFitWidth(40);
+        ch1gV.setPreserveRatio(true);
+        root.getChildren().add(ch1gV);
+        ch1gV.setVisible(false);
+
         Image rh1 = new Image("file:images/levelTwo/rectangleHole1.png");
         ImageView rh1V = new ImageView(rh1);
         rh1V.setFitWidth(40);
         rh1V.setPreserveRatio(true);
         root.getChildren().add(rh1V);
+
+        Image rh1g = new Image("file:images/levelTwo/rectangleHole1g.png");
+        ImageView rh1gV = new ImageView(rh1g);
+        rh1gV.setFitWidth(40);
+        rh1gV.setPreserveRatio(true);
+        root.getChildren().add(rh1gV);
+        rh1gV.setVisible(false);
 
         Image sh1 = new Image("file:images/levelTwo/squareHole1.png");
         ImageView sh1V = new ImageView(sh1);
@@ -81,11 +108,25 @@ public class Controller{
         sh1V.setPreserveRatio(true);
         root.getChildren().add(sh1V);
 
+        Image sh1g = new Image("file:images/levelTwo/squareHole1g.png");
+        ImageView sh1gV = new ImageView(sh1g);
+        sh1gV.setFitWidth(40);
+        sh1gV.setPreserveRatio(true);
+        root.getChildren().add(sh1gV);
+        sh1gV.setVisible(false);
+
         Image th1 = new Image("file:images/levelTwo/triangleHole1.png");
         ImageView th1V = new ImageView(th1);
         th1V.setFitWidth(40);
         th1V.setPreserveRatio(true);
         root.getChildren().add(th1V);
+
+        Image th1g = new Image("file:images/levelTwo/triangleHole1g.png");
+        ImageView th1gV = new ImageView(th1g);
+        th1gV.setFitWidth(40);
+        th1gV.setPreserveRatio(true);
+        root.getChildren().add(th1gV);
+        th1gV.setVisible(false);
 
         Image a = new Image("file:images/levelTwo/arc.png");
         ImageView arc = new ImageView(a);
@@ -123,11 +164,25 @@ public class Controller{
         sh2V.setPreserveRatio(true);
         root.getChildren().add(sh2V);
 
+        Image sh2g = new Image("file:images/levelTwo/squareHole2g.png");
+        ImageView sh2gV = new ImageView(sh2g);
+        sh2gV.setFitWidth(40);
+        sh2gV.setPreserveRatio(true);
+        root.getChildren().add(sh2gV);
+        sh2gV.setVisible(false);
+
         Image ah2 = new Image("file:images/levelTwo/arcHole2.png");
         ImageView ah2V = new ImageView(ah2);
         ah2V.setFitWidth(40);
         ah2V.setPreserveRatio(true);
         root.getChildren().add(ah2V);
+
+        Image ah2g = new Image("file:images/levelTwo/arcHole2g.png");
+        ImageView ah2gV = new ImageView(ah2g);
+        ah2gV.setFitWidth(40);
+        ah2gV.setPreserveRatio(true);
+        root.getChildren().add(ah2gV);
+        ah2gV.setVisible(false);
 
         Image ch2 = new Image("file:images/levelTwo/circleHole2.png");
         ImageView ch2V = new ImageView(ch2);
@@ -135,17 +190,38 @@ public class Controller{
         ch2V.setPreserveRatio(true);
         root.getChildren().add(ch2V);
 
+        Image ch2g = new Image("file:images/levelTwo/circleHole2g.png");
+        ImageView ch2gV = new ImageView(ch2g);
+        ch2gV.setFitWidth(40);
+        ch2gV.setPreserveRatio(true);
+        root.getChildren().add(ch2gV);
+        ch2gV.setVisible(false);
+
         Image rh2 = new Image("file:images/levelTwo/rectangleHole2.png");
         ImageView rh2V = new ImageView(rh2);
         rh2V.setFitWidth(40);
         rh2V.setPreserveRatio(true);
         root.getChildren().add(rh2V);
 
+        Image rh2g = new Image("file:images/levelTwo/rectangleHole2g.png");
+        ImageView rh2gV = new ImageView(rh2g);
+        rh2gV.setFitWidth(40);
+        rh2gV.setPreserveRatio(true);
+        root.getChildren().add(rh2gV);
+        rh2gV.setVisible(false);
+
         Image th2 = new Image("file:images/levelTwo/triangleHole2.png");
         ImageView th2V = new ImageView(th2);
         th2V.setFitWidth(40);
         th2V.setPreserveRatio(true);
         root.getChildren().add(th2V);
+
+        Image th2g = new Image("file:images/levelTwo/triangleHole2g.png");
+        ImageView th2gV = new ImageView(th2g);
+        th2gV.setFitWidth(40);
+        th2gV.setPreserveRatio(true);
+        root.getChildren().add(th2gV);
+        th2gV.setVisible(false);
 
         arc.setTranslateY(-100);
         circle.setTranslateY(-110);
@@ -159,13 +235,21 @@ public class Controller{
         triangle.setTranslateX(-200);
 
         ah1V.setTranslateX(-200);
+        ah1gV.setTranslateX(-200);
         ah2V.setTranslateX(-200);
+        ah2gV.setTranslateX(-200);
         ch1V.setTranslateX(-100);
+        ch1gV.setTranslateX(-100);
         ch2V.setTranslateX(-100);
+        ch2gV.setTranslateX(-100);
         rh1V.setTranslateX(100);
+        rh1gV.setTranslateX(100);
         rh2V.setTranslateX(100);
+        rh2gV.setTranslateX(100);
         th1V.setTranslateX(200);
+        th1gV.setTranslateX(200);
         th2V.setTranslateX(200);
+        th2gV.setTranslateX(200);
 
         DraggableMaker draggableMaker = new DraggableMaker();
         draggableMaker.makeDraggable(arc);
