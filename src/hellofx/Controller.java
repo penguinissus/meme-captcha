@@ -269,28 +269,97 @@ public class Controller{
         next.setTranslateX(-300.0);
         root.getChildren().add(next);
         next.setOnMouseClicked(e -> {
-            sh2V.setVisible(false);
-            sh1V.setVisible(false);
-            ah1V.setVisible(false);
-            ah2V.setVisible(false);
-            ch1V.setVisible(false);
-            ch2V.setVisible(false);
-            rh1V.setVisible(false);
-            rh2V.setVisible(false);
-            th1V.setVisible(false);
-            th2V.setVisible(false);
-            ahg1V.setVisible(false);
-            ahg2V.setVisible(false);
-            chg1V.setVisible(false);
-            chg2V.setVisible(false);
-            rhg1V.setVisible(false);
-            rhg2V.setVisible(false);
-            shg1V.setVisible(false);
-            shg2V.setVisible(false);
-            thg1V.setVisible(false);
-            thg2V.setVisible(false);
             robotSpotted();
         });
+
+        root.setOnMouseClicked(e -> {
+            if(draggableMaker.getSolveStatus() == 3){
+                sh2V.setVisible(false);
+                sh1V.setVisible(false);
+                ah1V.setVisible(false);
+                ah2V.setVisible(false);
+                ch1V.setVisible(false);
+                ch2V.setVisible(false);
+                rh1V.setVisible(false);
+                rh2V.setVisible(false);
+                th1V.setVisible(false);
+                th2V.setVisible(false);
+                ahg1V.setVisible(false);
+                ahg2V.setVisible(false);
+                chg1V.setVisible(false);
+                chg2V.setVisible(false);
+                rhg1V.setVisible(false);
+                rhg2V.setVisible(false);
+                shg1V.setVisible(false);
+                shg2V.setVisible(false);
+                thg1V.setVisible(false);
+                thg2V.setVisible(false);
+                arc.setVisible(false);
+                circle.setVisible(false);
+                rectangle.setVisible(false);
+                square.setVisible(false);
+                triangle.setVisible(false);
+                levelTwo();
+            } else if (draggableMaker.getSolveStatus() == 1){
+                sh2V.setVisible(false);
+                sh1V.setVisible(false);
+                ah1V.setVisible(false);
+                ah2V.setVisible(false);
+                ch1V.setVisible(false);
+                ch2V.setVisible(false);
+                rh1V.setVisible(false);
+                rh2V.setVisible(false);
+                th1V.setVisible(false);
+                th2V.setVisible(false);
+                ahg1V.setVisible(false);
+                ahg2V.setVisible(false);
+                chg1V.setVisible(false);
+                chg2V.setVisible(false);
+                rhg1V.setVisible(false);
+                rhg2V.setVisible(false);
+                shg1V.setVisible(false);
+                shg2V.setVisible(false);
+                thg1V.setVisible(false);
+                thg2V.setVisible(false);
+                arc.setVisible(false);
+                circle.setVisible(false);
+                rectangle.setVisible(false);
+                square.setVisible(false);
+                triangle.setVisible(false);
+                robotSpotted();
+            } else if (draggableMaker.getSolveStatus() == 2){
+                sh2V.setVisible(false);
+                sh1V.setVisible(false);
+                ah1V.setVisible(false);
+                ah2V.setVisible(false);
+                ch1V.setVisible(false);
+                ch2V.setVisible(false);
+                rh1V.setVisible(false);
+                rh2V.setVisible(false);
+                th1V.setVisible(false);
+                th2V.setVisible(false);
+                ahg1V.setVisible(false);
+                ahg2V.setVisible(false);
+                chg1V.setVisible(false);
+                chg2V.setVisible(false);
+                rhg1V.setVisible(false);
+                rhg2V.setVisible(false);
+                shg1V.setVisible(false);
+                shg2V.setVisible(false);
+                thg1V.setVisible(false);
+                thg2V.setVisible(false);
+                arc.setVisible(false);
+                circle.setVisible(false);
+                rectangle.setVisible(false);
+                square.setVisible(false);
+                triangle.setVisible(false);
+                levelThree();
+            }
+        });
+    }
+
+    public void levelThree(){
+
     }
 
     public void robotSpotted(){

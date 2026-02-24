@@ -1,9 +1,11 @@
 package hellofx;
 
 import javafx.scene.image.*;
+import java.util.Arrays;
 
 public class DraggableMaker {
     private double mouseX, mouseY;
+    private int status = 0;
     boolean[][] positions = {
         {false, false, false, false, false},
         {false, false, false, false, false},
@@ -11,6 +13,23 @@ public class DraggableMaker {
         {false, false, false, false, false},
         {false, false, false, false, false}
     };
+
+    boolean[][] bot = {
+        {true, false, false, false, false},
+        {false, true, false, false, false},
+        {false, false, false, true, false},
+        {false, false, true, false, false},
+        {false, false, false, false, true}
+    };
+
+    boolean[][] human = {
+        {false, false, false, false, false},
+        {false, false, false, false, false},
+        {true, true, true, true, true},
+        {false, false, false, false, false},
+        {false, false, false, false, false}
+    };
+
     int count = 0;
 
     public void makeDraggable(ImageView node, int n,
@@ -43,7 +62,7 @@ public class DraggableMaker {
             }
             mouseX = mouseEvent.getSceneX();
             mouseY = mouseEvent.getSceneY();
-            if (node.getTranslateX() > -220 && node.getTranslateX() < -180){
+            if (node.getTranslateX() > -220 && node.getTranslateX() < -180 && node.getTranslateY() > -50){
                 a1.setVisible(false);
                 a1g.setVisible(true);
                 a2.setVisible(false);
@@ -64,7 +83,7 @@ public class DraggableMaker {
                 t2.setVisible(true);
                 t1g.setVisible(false);
                 t2g.setVisible(false);
-            } else if (node.getTranslateX() > -120 && node.getTranslateX() < -80){
+            } else if (node.getTranslateX() > -120 && node.getTranslateX() < -80 && node.getTranslateY() > -50){
                 a1.setVisible(true);
                 a2.setVisible(true);
                 a1g.setVisible(false);
@@ -85,7 +104,7 @@ public class DraggableMaker {
                 t2.setVisible(true);
                 t1g.setVisible(false);
                 t2g.setVisible(false);
-            } else if (node.getTranslateX() > -20 && node.getTranslateX() <20){
+            } else if (node.getTranslateX() > -20 && node.getTranslateX() <20 && node.getTranslateY() > -50){
                 a1.setVisible(true);
                 a2.setVisible(true);
                 a1g.setVisible(false);
@@ -106,7 +125,7 @@ public class DraggableMaker {
                 t2.setVisible(true);
                 t1g.setVisible(false);
                 t2g.setVisible(false);
-            } else if (node.getTranslateX() > 80 && node.getTranslateX() < 120){
+            } else if (node.getTranslateX() > 80 && node.getTranslateX() < 120 && node.getTranslateY() > -50){
                 a1.setVisible(true);
                 a2.setVisible(true);
                 a1g.setVisible(false);
@@ -127,7 +146,7 @@ public class DraggableMaker {
                 t2.setVisible(true);
                 t1g.setVisible(false);
                 t2g.setVisible(false);
-            } else if (node.getTranslateX() > 180 && node.getTranslateX() < 220){
+            } else if (node.getTranslateX() > 180 && node.getTranslateX() < 220 && node.getTranslateY() > -50){
                 a1.setVisible(true);
                 a2.setVisible(true);
                 a1g.setVisible(false);
@@ -173,7 +192,7 @@ public class DraggableMaker {
         });
 
         node.setOnMouseReleased(mouseEvent -> {
-            if (node.getTranslateX() > -220 && node.getTranslateX() < -180){
+            if (node.getTranslateX() > -220 && node.getTranslateX() < -180 && node.getTranslateY() > -50){
                 if (n==1){
                     positions[0][0] = true;
                 } else if (n==2){
@@ -187,7 +206,7 @@ public class DraggableMaker {
                 }
                 node.setVisible(false);
                 count++;
-            } else if (node.getTranslateX() > -120 && node.getTranslateX() < -80){
+            } else if (node.getTranslateX() > -120 && node.getTranslateX() < -80 && node.getTranslateY() > -50){
                 if (n==1){
                     positions[1][0] = true;
 
@@ -202,7 +221,7 @@ public class DraggableMaker {
                 }
                 node.setVisible(false);
                 count++;
-            } else if (node.getTranslateX() > -20 && node.getTranslateX() < 20){
+            } else if (node.getTranslateX() > -20 && node.getTranslateX() < 20 && node.getTranslateY() > -50){
                 if (n==1){
                     positions[2][0] = true;
                 } else if (n==2){
@@ -216,7 +235,7 @@ public class DraggableMaker {
                 }
                 node.setVisible(false);
                 count++;
-            } else if (node.getTranslateX() > 80 && node.getTranslateX() < 120){
+            } else if (node.getTranslateX() > 80 && node.getTranslateX() < 120 && node.getTranslateY() > -50){
                 if (n==1){
                     positions[3][0] = true;
                 } else if (n==2){
@@ -230,7 +249,7 @@ public class DraggableMaker {
                 }
                 node.setVisible(false);
                 count++;
-            } else if (node.getTranslateX() > 180 && node.getTranslateX() < 220){
+            } else if (node.getTranslateX() > 180 && node.getTranslateX() < 220 && node.getTranslateY() > -50){
                 if (n==1){
                     positions[4][0] = true;
                 } else if (n==2){
@@ -246,8 +265,19 @@ public class DraggableMaker {
                 count++;
             }
             if (count >= 5){
-                
+                //check if they are all in the right place
+                if(Arrays.deepEquals(positions, bot)){
+                    status = 1;
+                } else if (Arrays.deepEquals(positions, human)){
+                    status = 2;
+                } else {
+                    status = 3;
+                }
             }
         });
+    }
+
+    public int getSolveStatus(){
+        return status;
     }
 }
