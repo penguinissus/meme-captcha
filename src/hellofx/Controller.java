@@ -57,6 +57,11 @@ public class Controller{
     }
 
     public void levelTwo(){
+        Text instruction = new Text("Drag these shapes in the 'correct' holes");
+        instruction.setFont(Font.font("Arial", FontWeight.NORMAL, FontPosture.REGULAR, 20));
+        instruction.setTranslateY(-180);
+        root.getChildren().add(instruction);
+
         Image ah1 = new Image("file:images/levelTwo/arcHole1.png");
         ImageView ah1V = new ImageView(ah1);
         ah1V.setFitWidth(40);
@@ -263,14 +268,14 @@ public class Controller{
             ah1V, ch1V, rh1V, sh1V, th1V, ah2V, ch2V, rh2V, sh2V, th2V,
             ahg1V, chg1V, rhg1V, shg1V, thg1V, ahg2V, chg2V, rhg2V, shg2V, thg2V);
 
-        Rectangle next = new Rectangle(100, 30, Color.web("#EEEEEE"));
-        modifyRect(next, "#D0D0D0", 2.0, 20, 20);
-        next.setTranslateY(-300.0);
-        next.setTranslateX(-300.0);
-        root.getChildren().add(next);
-        next.setOnMouseClicked(e -> {
-            robotSpotted();
-        });
+        // Rectangle next = new Rectangle(100, 30, Color.web("#EEEEEE"));
+        // modifyRect(next, "#D0D0D0", 2.0, 20, 20);
+        // next.setTranslateY(-300.0);
+        // next.setTranslateX(-300.0);
+        // root.getChildren().add(next);
+        // next.setOnMouseClicked(e -> {
+        //     robotSpotted();
+        // });
 
         root.setOnMouseClicked(e -> {
             if(draggableMaker.getSolveStatus() == 3){
@@ -299,6 +304,7 @@ public class Controller{
                 rectangle.setVisible(false);
                 square.setVisible(false);
                 triangle.setVisible(false);
+                instruction.setVisible(false);
                 levelTwo();
             } else if (draggableMaker.getSolveStatus() == 1){
                 sh2V.setVisible(false);
@@ -326,6 +332,7 @@ public class Controller{
                 rectangle.setVisible(false);
                 square.setVisible(false);
                 triangle.setVisible(false);
+                instruction.setVisible(false);
                 robotSpotted();
             } else if (draggableMaker.getSolveStatus() == 2){
                 sh2V.setVisible(false);
@@ -353,20 +360,25 @@ public class Controller{
                 rectangle.setVisible(false);
                 square.setVisible(false);
                 triangle.setVisible(false);
+                instruction.setVisible(false);
                 levelThree();
             }
         });
     }
 
     public void levelThree(){
-
+        Text text = new Text("You may now access reddit");
+        text.setFont(Font.font("Arial", FontWeight.NORMAL, FontPosture.REGULAR, 30));
+        root.getChildren().add(text);
     }
 
     public void robotSpotted(){
         Text text = new Text("haha u robot");
-        text.setTranslateY(-30.0);
+        text.setFont(Font.font("Arial", FontWeight.NORMAL, FontPosture.REGULAR, 50));
+        text.setTranslateY(-50.0);
         root.getChildren().add(text);
         Text text2 = new Text("go away clanker");
+        text2.setFont(Font.font("Arial", FontWeight.NORMAL, FontPosture.REGULAR, 50));
         text2.setTranslateY(-10.0);
         root.getChildren().add(text2);
         Rectangle retry = new Rectangle(100, 30, Color.web("#EEEEEE"));
@@ -376,6 +388,8 @@ public class Controller{
         Text retryText = new Text("Retry");
         retryText.setTranslateY(20);
         root.getChildren().add(retryText);
+        retry.setVisible(false);
+        retryText.setVisible(false);
 
         retry.setOnMouseEntered(e -> {
             retry.setStroke(Color.GREY);
